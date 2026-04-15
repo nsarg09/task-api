@@ -1,10 +1,10 @@
 import prisma from '../config/db.js';
 
 export async function findAll(completed) {
-  if (completed !== undefined) {
+  if (completed === undefined) {
     return prisma.task.findMany();
   }
-  return prisma.task.findMany({ where: { completed: completed } });
+  return prisma.task.findMany({ where: { completed: { equals: completed } } });
 }
 
 // Create a new task
