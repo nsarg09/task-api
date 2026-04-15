@@ -4,7 +4,7 @@ export async function findAll(completed) {
   if (completed === undefined) {
     return prisma.task.findMany();
   }
-  return prisma.task.findMany({ where: { completed: { equals: completed } } });
+  return prisma.task.findMany({ where: { completed: completed  } });
 }
 
 // Create a new task
