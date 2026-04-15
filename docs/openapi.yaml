@@ -18,6 +18,13 @@ paths:
       summary: List all tasks
       tags:
         - Tasks
+      parameters:
+        - name: completed
+          in: query
+          required: false
+          schema:
+            type: boolean
+          description: Filter tasks by completion status (true or false)
       responses:
         '200':
           description: OK
